@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EditEase Studio — Full</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">EditEase Studio — Full Backend</div>
+      <div class="status" id="srvStatus">Checking server...</div>
+    </header>
+    <main class="editor">
+      <section class="left">
+        <div class="player">
+          <video id="video" controls crossorigin="anonymous"></video>
+          <div class="transport">
+            <button id="playBtn">Play</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="stopBtn">Stop</button>
+            <span id="timeInfo">0:00 / 0:00</span>
+          </div>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-left">
+            <div class="tracks" id="tracks">
+            </div>
+            <div class="track-controls">
+              <button id="addTrackBtn">+ Add Track</button>
+            </div>
+          </div>
+          <div class="timeline-right">
+            <canvas id="timelineCanvas"></canvas>
+            <div id="beatMarkers" class="markers"></div>
+            <div id="splitMarkers" class="markers"></div>
+          </div>
+        </div>
+
+        <div class="upload-row">
+          <input id="fileInput" type="file" accept="video/*" />
+          <button id="uploadBtn">Upload</button>
+          <button id="thumbBtn">Generate Thumbnails</button>
+          <input id="thumbCount" type="number" value="16" min="4" max="120" style="width:70px" />
+        </div>
+      </section>
+
+      <aside class="right">
+        <h3>Thumbnails</h3>
+        <div id="thumbs" class="thumbs"></div>
+        <h3>Segments</h3>
+        <ul id="segmentsList"></ul>
+        <h3>Split Markers</h3>
+        <ol id="splitList"></ol>
+      </aside>
+    </main>
+    <footer class="footer">EditEase Studio — Full Backend</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
